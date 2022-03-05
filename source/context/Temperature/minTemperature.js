@@ -8,4 +8,3 @@ function temperatureMin() {
 const temp_min = new temperatureMin();
 
 export default temp_min;
-

@@ -8,4 +8,3 @@ function temperatureMax() {
 const temp_max = new temperatureMax();
 
 export default temp_max;
-

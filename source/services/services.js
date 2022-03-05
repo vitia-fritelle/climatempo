@@ -19,7 +19,7 @@ export const onFirstMount = () => {
             }, (error) => console.log(error)
         )
     } else {
-        console.log('Usuário não autorizou')
+        console.log('Usuário não autorizou');
     }  
     return null;
 }
@@ -27,13 +27,12 @@ export const onFirstMount = () => {
 export const getLocation = () => requestTemperature().then(renderPage);
 
 const renderPage = ({data}) => {
-    console.log(requestTemperature())
     temperature.setTemperature(data.main.temp);
-    temp_min.setTemperatureMin(data.main.temp_min)
-    temp_max.setTemperatureMax(data.main.temp_max)
-    feelsLike.setTemperatureFeelsLike(data.main.feels_like)
+    temp_min.setTemperatureMin(data.main.temp_min);
+    temp_max.setTemperatureMax(data.main.temp_max);
+    feelsLike.setTemperatureFeelsLike(data.main.feels_like);
     weather.setWeather(data.weather[0].icon);
-    location.setLocation(data.name)
+    location.setLocation(data.name);
     Page();
     return null;
 }

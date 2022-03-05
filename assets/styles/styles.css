@@ -2,12 +2,28 @@ body{
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    
+    position: relative;
 }
 
-span{
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+span {
     font-size: 25px;
     font-weight: 700;
 }
@@ -27,7 +43,7 @@ input {
     text-align: center;
     border-radius: 8px;
     height: 20px;
-    border: rgba(0, 0, 0, 0.72) solid
+    border: rgba(0, 0, 0, 0.72) solid;
 }
 
 input:focus {
@@ -38,7 +54,6 @@ input:focus {
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
-
 
 .coord {
     display: flex;
@@ -79,7 +94,6 @@ input:focus::-webkit-input-placeholder {
 
 img {
     width: 100px;
-
 }
 
 button {
