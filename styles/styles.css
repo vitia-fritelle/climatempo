@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: slategray;
     
 }
 
@@ -20,7 +21,14 @@ h1 {
 
 h2 {
     text-align: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
     margin-bottom: 20px;
+    font-size: 15px;
 }
 
 input {
@@ -37,6 +45,17 @@ input:focus {
 
 input:focus::-webkit-input-placeholder {
     color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 
@@ -56,6 +75,7 @@ input:focus::-webkit-input-placeholder {
     align-items: center;
     justify-content: center;
 }
+
 .secondary_data {
     display: flex;
     align-items: center;
@@ -67,10 +87,16 @@ input:focus::-webkit-input-placeholder {
     margin-right: 10px;
 }
 
-.others_data {
+.feels_like_temp {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.insert_coord {
+    display: flex;
+    justify-content: center;
+
 }
 
 .temperatute {
@@ -79,7 +105,6 @@ input:focus::-webkit-input-placeholder {
 
 img {
     width: 100px;
-
 }
 
 button {

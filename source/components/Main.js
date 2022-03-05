@@ -16,13 +16,17 @@ const Main = () => {
     <span class="min_temperature">Mínima ${temp_min.getTemperatureMin().toFixed(0)} °C</span>
     <span class="max_temperature">Máxima ${temp_max.getTemperatureMax().toFixed(0)} °C</span>
     </div>
-    <div class="others_data">
+    <div class="feels_like_temp">
     <span class="feelslike_temperature"> RealFeel® ${feelsLike.getTemperatureFeelsLike().toFixed(0)} °C</span><br>
     </div>
-    <h2>Insira as coordenadas da região desejada</h2>
+    <h2>Insira abaixo as coordenadas da região desejada</h2>
+    <div class="insert_coord">
+    <p>Não sabe as coordenadas da região?&nbsp</p>
+    <a href="https://www.coordenadas-gps.net/endereco-longitude-latitude-coordenadas-gps" target="_blank"><b>Clique Aqui!</b></a>
+    </div>
     <div class="coord">
-        <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='latitude'></input>
-        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='longitude'></input>
+        <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='Latitude (Ex: 22.4247)'></input>
+        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='Longitude (Ex: -45.4601)'></input>
     </div>
     <div class="container">
     <button onclick='window.getLocation()'>Atualizar</button>
