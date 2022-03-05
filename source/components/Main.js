@@ -1,6 +1,11 @@
-const Main = (temperature) => {
+import temperature from "../context/Temperature/Temperature.js";
+
+const Main = () => {
     return `
-    <p>${temperature}</p>
+    <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='latitude'></input>
+    <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='longitude'></input>
+    <p>${temperature.getTemperature()}</p>
+    <button onclick='window.getLocation()'>Atualizar</button>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./source/source.js" type="module"></script>
     `;
