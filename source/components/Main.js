@@ -6,6 +6,8 @@ import feelsLike from "../context/Temperature/feelsLikeTemperature.js";
 import location from "../context/Position/Location.js";
 import selectCountries from "./SelectCountries.js";
 import inputOptions from "../context/InputOptions/InputOptions.js";
+import position from "../context/Position/Position.js";
+import cityName from "../context/CityName/CityName.js";
 
 const Main = () => {
     return `
@@ -38,8 +40,8 @@ const inputByCoordinates = () => {
         <a href="https://www.coordenadas-gps.net/endereco-longitude-latitude-coordenadas-gps" target="_blank"><b>Clique Aqui!</b></a>
     </div>
     <div class="coord">
-        <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='Latitude (Ex: 22.4247)'></input>
-        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='Longitude (Ex: -45.4601)'></input>
+        <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='Latitude (Ex.: ${position.getLatitude()?position.getLatitude().toFixed(4):'22.4247'})'>
+        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='Longitude (Ex.: ${position.getLatitude()?position.getLatitude().toFixed(4):'-45.4601'})'>
     </div>`;
 }
 
@@ -47,7 +49,7 @@ const inputByCity = () => {
     return `
     <h2>Insira abaixo a cidade desejada e selecione o país</h2>
     <div class="city">
-        <input id='city' type="text" onchange='window.setCity(this.value)' placeholder='Insira a sua cidade'></input>
+        <input id='city' type="text" onchange='window.setCity(this.value)' placeholder='Insira a sua cidade (Ex.: ${cityName.getCityName()?cityName.getCityName():'Rio de Janeiro'})'>
         ${selectCountries()}
     </div>`;
 }

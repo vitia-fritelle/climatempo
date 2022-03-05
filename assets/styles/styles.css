@@ -104,6 +104,10 @@ a:hover {
     margin-right: 50px;
 }
 
+#city {
+    width: 250px;
+}
+
 .main_data {
     display: flex;
     align-items: center;
