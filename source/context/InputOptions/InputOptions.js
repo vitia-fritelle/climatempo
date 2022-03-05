@@ -4,14 +4,14 @@ function InputOptions(initialOption) {
     this.getOption = () => _option;
     this.setOption = (opt) => _option = opt;
     this.selectOption = () => {
-        let option;
-        if (_option) {
-            option = document.querySelector('#coord');
-        } else {
-            option = document.querySelector('#city');
-        }
+        const option = this.getOptionElement();
         option.setAttribute('selected','selected');
         return null;
+    }
+    this.getOptionElement = () => {
+        return _option
+               ?document.querySelector('#coord')
+               :document.querySelector('#city');
     }
 }
 

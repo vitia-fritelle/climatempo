@@ -53,3 +53,12 @@ const renderPage = ({data}) => {
     inputOptions.selectOption();
     return null;
 }
+
+export const onKeyPressEnter = () => {
+
+    document.addEventListener('keyup',(e) => {
+        const key = e.key;
+        key === 'Enter' && getLocation();
+        return null;
+    });
+}
