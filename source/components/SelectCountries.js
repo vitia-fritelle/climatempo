@@ -1,7 +1,7 @@
 const selectCountries = () => {
     return `
     <!-- All countries -->
-    <select id="country" name="country">
+    <select id="country" name="country" onchange="window.setCountry(this.value)">
         <option>Selecione o seu país</option>
         <option value="AF">Afeganistão</option>
         <option value="AX">Ilhas Aland</option>

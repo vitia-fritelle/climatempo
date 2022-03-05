@@ -42,7 +42,7 @@ const inputByCoordinates = () => {
 const inputByCity = () => {
     return `
     <div class="city">
-        <input id='city' type="text" onchange='window.setLatitude(this.value)' placeholder='Insira a sua cidade'></input>
+        <input id='city' type="text" onchange='window.setCity(this.value)' placeholder='Insira a sua cidade'></input>
         ${selectCountries()}
     </div>`;
 }

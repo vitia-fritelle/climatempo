@@ -1,4 +1,4 @@
-import requestTemperature from "../adapters/adapters.js";
+import {requestByCity, requestByCoord} from "../adapters/adapters.js";
 import position from "../context/Position/Position.js";   
 import Page from "../pages/Page.js";
 import temperature from "../context/Temperature/Temperature.js";
@@ -7,6 +7,7 @@ import temp_min from "../context/Temperature/minTemperature.js";
 import temp_max from "../context/Temperature/maxTemperature.js";
 import feelsLike from "../context/Temperature/feelsLikeTemperature.js";
 import location from "../context/Position/Location.js";
+import inputOptions from "../context/InputOptions/InputOptions.js";
 
 export const onFirstMount = () => {
     
@@ -15,7 +16,10 @@ export const onFirstMount = () => {
             ({coords}) => {
                 position.setLatitude(coords.latitude);
                 position.setLongitude(coords.longitude);
-                requestTemperature().then(renderPage);
+                requestByCoord().then((response) => {
+                    renderPage(response);
+                    inputOptions.selectOption();
+                });
             }, (error) => console.log(error)
         )
     } else {
@@ -24,7 +28,19 @@ export const onFirstMount = () => {
     return null;
 }
 
-export const getLocation = () => requestTemperature().then(renderPage);
+export const getLocation = () => {
+    
+    if(inputOptions.getOption()) {
+        requestByCoord().then(renderPage);
+    } else {
+        requestByCity().then(({data}) => {
+            position.setLatitude(data[0].lat);
+            position.setLongitude(data[0].lon);
+            requestByCoord().then(renderPage);
+        });
+    }
+    return null;
+};
 
 const renderPage = ({data}) => {
     temperature.setTemperature(data.main.temp);
@@ -34,7 +50,6 @@ const renderPage = ({data}) => {
     weather.setWeather(data.weather[0].icon);
     location.setLocation(data.name);
     Page();
-    const option = document.querySelector('#coord');
-    option.setAttribute('selected','selected');
+    inputOptions.selectOption();
     return null;
 }
