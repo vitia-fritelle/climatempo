@@ -1,7 +1,7 @@
-import {getLocation, getLocation2} from './services/services.js';
+import {getLocation, onFirstMount} from './services/services.js';
 import position from './context/Position/Position.js';
 
-getLocation();
-window.getLocation = getLocation2;
+onFirstMount();
+window.getLocation = getLocation;
 window.setLatitude = position.setLatitude;
 window.setLongitude = position.setLongitude;

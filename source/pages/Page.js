@@ -2,7 +2,12 @@ import Main from "../components/Main.js";
 
 const Page = () => {
     const body = document.querySelector('body');
-    body.innerHTML = Main();
+    body.innerHTML = `
+    <main>
+        ${Main()}
+    </main>
+    `;
+    return null;
 }
 
 export default Page;
