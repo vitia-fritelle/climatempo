@@ -34,5 +34,7 @@ const renderPage = ({data}) => {
     weather.setWeather(data.weather[0].icon);
     location.setLocation(data.name);
     Page();
+    const option = document.querySelector('#coord');
+    option.setAttribute('selected','selected');
     return null;
 }

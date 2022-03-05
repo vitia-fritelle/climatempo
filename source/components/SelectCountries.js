@@ -2,7 +2,7 @@ const selectCountries = () => {
     return `
     <!-- All countries -->
     <select id="country" name="country">
-        <option>country</option>
+        <option>Selecione o seu país</option>
         <option value="AF">Afeganistão</option>
         <option value="AX">Ilhas Aland</option>
         <option value="AL">Albânia</option>

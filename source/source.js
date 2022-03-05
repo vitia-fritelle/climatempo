@@ -10,8 +10,17 @@ window.setLongitude = position.setLongitude;
 window.changeInputOptionsCoord = () => {
     inputOptions.setOption(true);
     Page();
+    selectElement('#coord');
 }
 window.changeInputOptionsCity = () => {
     inputOptions.setOption(false);
     Page();
+    selectElement('#city');
+}
+
+const selectElement = (seletorHierarquico) => {
+
+    const option = document.querySelector(seletorHierarquico);
+    option.setAttribute('selected','selected');
+    return null;
 }

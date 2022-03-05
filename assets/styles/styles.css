@@ -12,11 +12,27 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0 10px;
+    padding: 10px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+}
+
+header > input {
+    display: none;
+}
+
+header > label:first-of-type {
+    border-right: black 1px solid ;
+}
+
+header > label {
+    padding: 0 10px;
+}
+
+header > input[selected='selected'] + label {
+    font-weight: bold;
 }
 
 label {
@@ -46,23 +62,26 @@ input {
     border: rgba(0, 0, 0, 0.72) solid;
 }
 
+select {
+    height: 25px;
+}
+
 input:focus {
     outline: none;
-
 }
 
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
-.coord {
+.coord, .city {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-#lat {
+#lat, #city {
     margin-right: 50px;
 }
 
@@ -125,4 +144,17 @@ button:active {
 
 .container {
     text-align: center;
+}
+ @media (max-width: 520px) {
+    .coord, .city {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    #lat, #city {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
