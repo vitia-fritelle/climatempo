@@ -11,7 +11,7 @@ const Main = () => {
     return `
     <h1>${location.getLocation()}</h1>
     <div class="main_data">
-        <img src="http://openweathermap.org/img/wn/${weather.getWeather()}@2x.png" alt="weather_icon">
+        <img src="https://openweathermap.org/img/wn/${weather.getWeather()}@2x.png" alt="weather_icon">
         <span class="temperatute">${temperature.getTemperature().toFixed(0)} °C</span>
     </div>
     <div class="secondary_data">
