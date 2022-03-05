@@ -8,3 +8,8 @@ function Temperature() {
 const temperature = new Temperature();
 
 export default temperature;
+
+
+
+
+
