@@ -21,4 +21,10 @@ export const getLocation = () => {
     }  
 }
 
-export const getLocation2 = () => requestTemperature().then(Page); 
+export const getLocation2 = () => {
+    requestTemperature().then(({data}) => {
+        temperature.setTemperature(data.main.temp);
+        Page();
+    })
+}
+ 
