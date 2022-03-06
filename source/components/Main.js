@@ -41,7 +41,7 @@ const inputByCoordinates = () => {
     </div>
     <div class="coord">
         <input id='lat' type="text" onchange='window.setLatitude(this.value)' placeholder='Latitude (Ex.: ${position.getLatitude()?position.getLatitude().toFixed(4):'22.4247'})'>
-        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='Longitude (Ex.: ${position.getLatitude()?position.getLatitude().toFixed(4):'-45.4601'})'>
+        <input id='lon' type="text" onchange='window.setLongitude(this.value)' placeholder='Longitude (Ex.: ${position.getLongitude()?position.getLongitude().toFixed(4):'-45.4601'})'>
     </div>`;
 }
 
