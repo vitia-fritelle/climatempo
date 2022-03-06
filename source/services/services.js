@@ -39,7 +39,7 @@ export const getLocation = () => {
             position.setLatitude(data[0].lat);
             position.setLongitude(data[0].lon);
             requestByCoord().then(renderPage);
-        }).catch(error => error.response.status !== 400 && console.error(error.message));
+        }).catch(error => error.response && error.response.status !== 400 && console.error(error.message));
     }
     return null;
 };
