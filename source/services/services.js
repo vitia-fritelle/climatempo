@@ -16,11 +16,13 @@ export const onFirstMount = () => {
             ({coords}) => {
                 position.setLatitude(coords.latitude);
                 position.setLongitude(coords.longitude);
-                requestByCoord().then((response) => {
-                    renderPage(response);
-                    inputOptions.selectOption();
-                });
-            }, (error) => console.log(error)
+                requestByCoord().then(renderPage);
+            }, (_) => {
+                //Localização padrão só para ele mostrar algo
+                position.setLatitude(-23);
+                position.setLongitude(-43);
+                requestByCoord().then(renderPage);
+            }
         )
     } else {
         console.log('Usuário não autorizou');
@@ -37,7 +39,7 @@ export const getLocation = () => {
             position.setLatitude(data[0].lat);
             position.setLongitude(data[0].lon);
             requestByCoord().then(renderPage);
-        });
+        }).catch(error => error.response.status !== 400 && console.error(error.message));
     }
     return null;
 };
